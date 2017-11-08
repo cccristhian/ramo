@@ -1,6 +1,11 @@
 from django import forms
 from .models import Ramo, Flor
 
+class FlorForm(forms.ModelForm):
+
+        class Meta:
+            model = Flor
+            fields = ('nombre', 'caracteristica','color','precio')
 
 class RamoForm(forms.ModelForm):
 

@@ -1,12 +1,13 @@
-<div class="content container">
+{% extends 'base.html' %}
+{% block content %}
        <div class="row">
            <div class="col-md-8">
-               {% for fl in fl %}
-
-                       <form method="POST" class="post-form">{% csrf_token %}
-                       <h1><a href="{%url 'ramo' pk=fl.pk %}">{{ fl.nombre }}  </a></h1>
-
+             {% for fl in fl %}
+                <div class="post">
+                  <td><a href="{%url 'ramo' pk=fl.pk %}">{{ fl.nombre }}  </a></td>
+             </div>
+            {% endfor %}
                    </div>
-               {% endfor %}
            </div>
        </div>
+{% endblock content %}

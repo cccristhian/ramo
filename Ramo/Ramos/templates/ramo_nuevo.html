@@ -1,7 +1,11 @@
-<h1>Nuevo Ramo</h1>
 
-        <form method="POST" class="post-form">{% csrf_token %}
-            {{ formulario.as_p }}
-            
-            <button type="submit" class="save btn btn-default">Guardar</button>
-        </form>
+       <div class="row">
+           <div class="col-md-8">
+             <form method="POST" class="post-form">{% csrf_token %}
+                 {{ formulario.as_p }}
+
+                 <button type="submit" class="save btn btn-default">Guardar</button>
+             </form>
+
+           </div>
+       </div>

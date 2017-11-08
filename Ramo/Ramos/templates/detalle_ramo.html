@@ -1,8 +1,18 @@
 
-  <div class="post">
-        </div>
-    <h1>{{p.nombre}}</h1>
-    <p>{{p.total|linebreaksbr}}</p>
-    <p>{{p.flores}}</p>
+{% extends 'base.html' %}
+{% block content %}
+       <div class="row">
+           <div class="col-md-8">
+             <h1>{{p.flor_id}}</h1>
+             <tr><a href="{% url 'borrar_ramo' pk=p.pk %}"class="btn btn-default"><span class="glyphicon glyphicon-remove"></span></a></tr>
+             <h1>{{p.nombre}}</h1>
+             <td>El total de su Ramo es de : {{p.total}}</td>
+             <p>las flores que se encuentran en este ramo son:</p>
 
-  </div>
+               {% for datos in datos %}
+               <p>{{datos.nombre}}</p>
+               {% endfor %}
+
+           </div>
+       </div>
+{% endblock content %}

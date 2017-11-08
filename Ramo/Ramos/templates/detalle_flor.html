@@ -1,6 +1,15 @@
-
+{% extends 'base.html' %}
+{% block content %}
   <div class="post">
         </div>
-    <h1>{{p.nombre}}</h1>
-    <p>{{p.caracteristica|linebreaksbr}}</p>
+        <tr><a href="{% url 'borrar_flor' pk=p.pk %}"class="btn btn-default"><span class="glyphicon glyphicon-remove"></span></a></tr>
+        <tr><a href="{% url 'editar_flor' pk=p.pk %}"class="btn btn-default"><span class="glyphicon glyphicon-edit"></span></a></tr>
+
+
+    <h1>Nombre de flor: {{p.nombre}}</h1>
+    <p>Caracteristica de Flor: {{p.caracteristica}}</p>
+    <p>Precio de Flor: {{p.precio}}</p>
+    <p>Color de Flor: {{p.color}}</p>
   </div>
+
+ {% endblock content %}
